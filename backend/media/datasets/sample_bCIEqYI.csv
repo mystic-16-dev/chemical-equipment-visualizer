@@ -1,0 +1,6 @@
+EquipmentType,Flowrate,Pressure,Temperature
+Pump,100,50,60
+Valve,0,20,30
+Tank,500,10,25
+Pump,120,55,65
+HeatExchanger,200,30,80
