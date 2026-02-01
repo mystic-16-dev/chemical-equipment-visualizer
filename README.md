@@ -78,4 +78,3 @@ CSV files must contain:
 `EquipmentType`, `Flowrate`, `Pressure`, `Temperature` (Headers are case-insensitive).
 
 ---
-*Created for FOSSEE Web-Based Application Internship Screening Task.*
