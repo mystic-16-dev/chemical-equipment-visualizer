@@ -78,4 +78,7 @@ CSV files must contain:
 `EquipmentType`, `Flowrate`, `Pressure`, `Temperature` (Headers are case-insensitive).
 
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b4ce1b8fa223411e11e802bd64111a58e421421
