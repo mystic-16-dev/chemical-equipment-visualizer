@@ -1,84 +1,142 @@
-# Chemical Equipment Parameter Visualizer
-## Hybrid Web + Desktop Application
+Chemical Equipment Parameter Visualizer
+Hybrid Web + Desktop Application
 
-A full-stack application for visualizing and analyzing chemical equipment data (Flowrate, Pressure, Temperature, etc.). This project consists of a central Django backend, a React.js web frontend, and a PyQt5 desktop client.
+This project is developed as part of the FOSSEE Web-Based Application Internship .
+It is a hybrid application consisting of a common Django backend, a React-based web frontend,and a PyQt5 desktop application.
 
-### 📋 Project Overview
-- **Backend**: Django REST Framework API for data processing, analytics, and history management.
-- **Web App**: Modern React dashboard with drag-and-drop upload and interactive Chart.js visualizations.
-- **Desktop App**: Native PyQt5 application with dark mode UI, offering the same analytics capabilities.
-- **Features**: 
-    - Full Authentication (Login/Register)
-    - CSV Data Analysis (Auto-calculation of averages and distributions)
-    - PDF Report Generation (with charts and tables)
-    - Data Persistence (User history, synced across Web and Desktop)
+--------------------------------------------------
+PROJECT OVERVIEW
+--------------------------------------------------
+The application allows users to upload a CSV file containing chemical equipment parameters
+such as Flowrate, Pressure, and Temperature.
 
-### 🛠 Tech Stack
-| Component | Technologies |
-|-----------|--------------|
-| **Backend** | Python, Django, Django REST Framework, Boolean-Pandas, SQLite, ReportLab |
-| **Web Frontend** | JavaScript, React.js, Chart.js, CSS |
-| **Desktop Frontend**| Python, PyQt5, Matplotlib |
-| **Version Control** | Git, GitHub |
+The Django backend processes the data, computes analytics, stores upload history,
+and exposes REST APIs that are consumed by both the Web and Desktop applications.
 
----
+--------------------------------------------------
+KEY FEATURES
+--------------------------------------------------
+- Basic authentication (login required)
+- CSV upload and validation
+- Data analytics:
+  * Total equipment count
+  * Average Flowrate
+  * Average Pressure
+  * Average Temperature
+  * Equipment type distribution
+- Data visualization:
+  * Web: Chart.js
+  * Desktop: Matplotlib
+- History management:
+  * Stores only the last 5 uploaded datasets
+- PDF report generation with summary and charts
 
-### 🚀 Setup & Installation
+--------------------------------------------------
+TECH STACK
+--------------------------------------------------
+Backend:
+- Python
+- Django
+- Django REST Framework
+- Pandas
+- SQLite
+- ReportLab
 
-#### Prerequisite
+Web Frontend:
+- React.js
+- Chart.js
+
+Desktop Frontend:
+- PyQt5
+- Matplotlib
+
+Version Control:
+- Git
+- GitHub
+
+--------------------------------------------------
+PROJECT STRUCTURE
+--------------------------------------------------
+project-root/
+|-- backend/
+|-- web-frontend/
+|-- desktop/
+|-- README.txt
+
+--------------------------------------------------
+SETUP & INSTALLATION
+--------------------------------------------------
+Prerequisites:
 - Python 3.9+
 - Node.js & npm
+- Git
 
-#### 1. Backend Setup
-1. Open terminal in `backend/` folder.
-2. Create virtual env: `python -m venv venv`
-3. Activate env: `venv\Scripts\activate` (Windows) or `source venv/bin/activate` (Mac/Linux)
-4. Install dependencies (covers both Backend & Desktop): 
-   ```bash
-   pip install -r requirements.txt
-   ```
-5. Run migrations:
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
-6. Start Server:
-   ```bash
-   python manage.py runserver
-   ```
-   *Server runs at http://127.0.0.1:8000*
+-----------------
+BACKEND SETUP
+-----------------
+cd backend
+python -m venv venv
 
-#### 2. Web Application Setup
-1. Open new terminal in `frontend/` folder.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start React App:
-   ```bash
-   npm run dev
-   ```
-   *App runs at http://localhost:5173* (or similar)
+Activate virtual environment:
+Windows:
+venv\Scripts\activate
 
-#### 3. Desktop Application Setup
-1. Open new terminal in `desktop/` folder (or root).
-2. Ensure you have installed the requirements from Step 1.
-3. Run the App:
-   ```bash
-   python desktop/main.py
-   ```
+Linux / macOS:
+source venv/bin/activate
 
-### 📂 How to Run
-1. Ensure Backend is running on port 8000.
-2. **Web**: Login at the web URL. Go to Dashboard -> Upload CSV -> View Charts -> Download Report.
-3. **Desktop**: Launch app -> Login -> Upload CSV -> Switch Tabs to view Datatable or Charts -> Download Report.
+Install dependencies:
+pip install -r requirements.txt
 
-### 📜 Data Format
-CSV files must contain:
-`EquipmentType`, `Flowrate`, `Pressure`, `Temperature` (Headers are case-insensitive).
+Run migrations:
+python manage.py makemigrations
+python manage.py migrate
 
----
-<<<<<<< HEAD
+Start server:
+python manage.py runserver
 
-=======
->>>>>>> 6b4ce1b8fa223411e11e802bd64111a58e421421
+Backend URL:
+http://127.0.0.1:8000
+
+-----------------
+WEB APP SETUP
+-----------------
+cd web-frontend
+npm install
+npm run dev
+
+Web App URL:
+http://localhost:5173
+
+-----------------
+DESKTOP APP SETUP
+-----------------
+Ensure backend is running.
+cd desktop
+python main.py
+
+--------------------------------------------------
+HOW TO USE
+--------------------------------------------------
+1. Start Django backend
+2. Open Web or Desktop application
+3. Login
+4. Upload CSV file
+5. View table, charts, and summary
+6. Download PDF report
+
+--------------------------------------------------
+CSV DATA FORMAT
+--------------------------------------------------
+Required CSV columns:
+Equipment Name, Type, Flowrate, Pressure, Temperature
+
+- Column names are case-insensitive
+- Invalid CSV files are rejected
+
+--------------------------------------------------
+SUBMISSION NOTE
+--------------------------------------------------
+The application is fully functional on localhost.
+Deployment is optional as per the screening task guidelines.
+
+--------------------------------------------------
